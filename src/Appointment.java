@@ -34,13 +34,10 @@ class Appoinment {
 	        
 	        driver.findElement(By.xpath("//*[@id=\"btn-book-appointment\"]")).click();
 	        
-	        //Add Validate
+	        //Add Validate and Assert
 	        String result = driver.findElement(By.id("comment")).getText();
 	        
-	        if(result.equalsIgnoreCase("Test"))
-	        		System.out.println("Pass");
-	        else
-	        		System.out.println("Fail");	
+	        assertEquals("Test",result);
 	        
 	        Thread.sleep(2000);
 	         driver.quit();
